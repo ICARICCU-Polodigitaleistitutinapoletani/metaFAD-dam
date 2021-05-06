@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<model:Model xmlns:pnx="http://www.pinax.org/dtd/1.0/" xmlns:model="pinax.models.*/"
+             model:tableName="dam.models.ByteStream" model:usePrefix="true" model:type="document">
+    <model:Define>
+        <!--
+        su instance l'indice serve perché deve essere ricercato
+        viene usato dal servizio:
+        -->
+        <model:Field name="instance" type="string" index="true"/>
+        <model:Field name="userId" type="int" index="true"/>
+        <model:Field name="title" type="string" index="true"/>
+        <model:Field name="name" type="string" index="true"/>
+        <model:Field name="filename" type="string" index="true"/>
+        <!--
+        su md5 l'indice serve perché deve essere ricercato
+        viene usato dal servizio:
+        -->
+        <model:Field name="md5" type="string" index="true"/>
+        <model:Field name="type" type="string" index="true"/>
+        <model:Field name="thumbnail_id" type="int" />
+        <model:Field name="thumbnail_detail_id" type="int" />
+        <model:Field name="size" type="int" index="true"/>
+        <model:Field name="date" type="string" index="true"/>
+        <model:Field name="uri" type="string" />
+        <model:Field name="media_id" type="string" />
+        <model:Field name="width" type="int" />
+        <model:Field name="height" type="int" />
+        <model:Field name="datastream" type="array"/>
+    </model:Define>
+
+</model:Model>

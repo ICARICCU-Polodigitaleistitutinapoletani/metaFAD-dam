@@ -1,0 +1,107 @@
+[
+    {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+            {
+                "type": "section",
+                "htmlClass": "col-xs-4",
+                "tagFields":[
+                    {
+                        "index":1,
+                        "key":"author"
+                    },
+                    {
+                        "index":4,
+                        "key":"category"
+                    },
+                    {
+                        "index":5,
+                        "key":"tag"
+                    }
+                ],
+                "items": [
+                    {
+                        "key": "title",
+                        "disableSuccessState": true,
+                        "feedback": false
+                    },
+                    {
+                        "key": "author",
+                        "placeholder": " ",
+                        "disableSuccessState": true,
+                        "feedback": false,
+                        "options" : {
+                            "tagging": "setTag(tag)" ,
+                            "taggingLabel": " ",
+                            "taggingToken": "SPACE|ENTER|,",
+                            "uiClass": "uiselect"
+                        },
+                        "onChange": "updateTag(modelValue,form)"
+                    },
+                    {
+                        "key": "filename",
+                        "disableSuccessState": true,
+                        "feedback": false
+                    },
+                    {
+                        "key": "date",
+                        "placeholder": " ",
+                        "feedback": false,
+                        "pickadate": {
+                            "selectYears": 10
+                        }
+                    },
+                    {
+                        "key": "category",
+                        "placeholder": " ",
+                        "disableSuccessState": true,
+                        "feedback": false,
+                        "options": {
+                            "tagging": "setTag(tag)",
+                            "taggingLabel": " ",
+                            "taggingToken": "SPACE|ENTER|,",
+                            "uiClass": "uiselect"
+                        }
+                    },
+                    {
+                        "type":"section",
+                        "htmlClass":"box-select-relative",
+                        "items":[
+                            {
+                                "key": "tag",
+                                "placeholder": " ",
+                                "disableSuccessState": true,
+                                "feedback": false,
+                                "options" : {
+                                    "taggingLabel": " ",
+                                    "taggingToken": "SPACE|ENTER|,",
+                                    "uiClass": "uiselect"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-8",
+                "items": [
+                    {
+                        "key": "description",
+                        "type": "wysiwyg",
+                        "tinymceOptions": {
+                            "menubar": false,
+                            "statusbar" : false,
+                            "plugins" : "paste",
+                            "paste_as_text": true,
+                            "toolbar": [
+                                "bold italic | bullist numlist outdent indent | undo redo | cut copy paste | code"
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

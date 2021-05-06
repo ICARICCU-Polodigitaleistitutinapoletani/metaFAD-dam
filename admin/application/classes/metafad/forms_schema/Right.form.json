@@ -1,0 +1,15 @@
+[
+  {
+    "type": "section",
+    "htmlClass": "row",
+    "items": [
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "author_description"
+        ]
+      }
+    ]
+  }
+]

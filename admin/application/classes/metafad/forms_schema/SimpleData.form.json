@@ -1,0 +1,122 @@
+[
+  {
+    "type": "section",
+    "htmlClass": "col-xs-12",
+    "tagFields":[
+      {
+        "index":1,
+        "key":"author"
+      },
+      {
+        "index":4,
+        "key":"category"
+      },
+      {
+        "index":5,
+        "key":"tag"
+      }
+    ],
+    "items": [
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          {
+            "key": "title",
+            "validationMessage": " ",
+            "disableErrorState":  true,
+            "onChange": "updatedFormInupt(modelValue,form)"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          {
+            "key": "author",
+            "placeholder": " ",
+            "feedback": false,
+            "options" : {
+              "tagging": "setTag(tag)" ,
+              "taggingLabel": " ",
+              "taggingToken": "SPACE|ENTER|,",
+              "uiClass": "uiselect"
+            },
+            "validationMessage": " ",
+            "disableErrorState":  true,
+            "disableSuccessState":  true,
+            "onChange": "updatedFormInupt(modelValue,form)"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          {
+            "key": "date",
+            "pickadate": {
+              "selectYears": 10
+            },
+            "validationMessage": " ",
+            "disableErrorState":  true,
+            "onChange": "updateTag(modelValue,form)"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12 box-select-relative",
+        "items": [
+          {
+            "key": "category",
+            "placeholder": " ",
+            "feedback": false,
+            "options": {
+              "tagging": "setTag(tag)",
+              "taggingLabel": " ",
+              "taggingToken": "SPACE|ENTER|,",
+              "uiClass": "uiselect"
+            },
+            "validationMessage": " ",
+            "disableErrorState":  true,
+            "disableSuccessState":  true,
+            "onChange": "updateTag(modelValue,form)"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12 box-select-relative",
+        "items": [
+          {
+            "key": "tag",
+            "placeholder": " ",
+            "feedback": false,
+            "options" : {
+              "tagging": "setTag(tag)" ,
+              "taggingLabel": " ",
+              "taggingToken": "SPACE|ENTER|,",
+              "uiClass": "uiselect"
+            },
+            "validationMessage": " ",
+            "disableErrorState":  true,
+            "disableSuccessState":  true,
+            "onChange": "updateTag(modelValue,form)"
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          {
+            "key": "unzip",
+            "condition": "showArchiveField()"
+          }
+        ]
+      }
+    ]
+  }
+]

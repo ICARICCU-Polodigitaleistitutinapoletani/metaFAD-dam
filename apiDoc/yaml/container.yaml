@@ -1,0 +1,290 @@
+  /rest/dam/{instance}/container/{containerId}:
+    get:
+      description: |
+        Gets `Container` objects.
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: containerId
+          in: path
+          description: Container's id
+          type: string
+          required: true
+        - name: MainData
+          in: query
+          type: boolean
+          description: Parametro per ricevere i metadati
+        - name: collection
+          in: query
+          type: boolean
+          description: Parametro per ricevere le collezioni collegate
+        - name: folder
+          in: query
+          type: boolean
+          description: Parametro per ricevere le cartelle collegate
+        - name: RelatedMedia
+          in: query
+          type: boolean
+          description: Parametro per ricevere i media collegati
+        - name: ContainedMedia
+          in: query
+          type: boolean
+          description: Parametro per ricevere i media contenuti nel contenitore
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              MainData:
+                type: object
+                description: 'Oggetto con i metadati legati al contenitore. Questo oggetto potrebbe cambiare in base all istanza del DAM. Qui sotto è descritto un esempio'
+                properties:
+                  id: 
+                    type: string
+                  title:
+                    type: string
+                  thumbnail:
+                    type: string
+                  date:
+                    type: string
+                    format: date-time
+                  author:
+                    type: array
+                    items:
+                      type: string
+                  category:
+                    type: array
+                    items:
+                      type: string
+                  tags:
+                    type: array
+                    items:
+                      type: string
+                  description:
+                    type: string
+              collection:
+                type: array
+                items:
+                  type: string
+                  description: 'Path degli id realtivi alla collezione collegata'
+              folder:
+                type: string
+                description: 'Path degli id realtivi alla cartella collegata'
+              RelatedMedia:
+                type: array
+                items:
+                  type: object
+                  description: 'Oggetto che descrive il media collegato'
+              ContainedMedia:
+                type: array
+                items:
+                  type: object
+                  description: 'Oggetto che descrive il media collegato'
+      tags:
+        - containers
+
+    delete:
+      description: Delete container
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: containerId
+          in: path
+          description: ID of container
+          type: string
+          required: true
+        - name: removeContainedMedia
+          in: query
+          type: boolean
+          description: Eliminazione media figli dal DAM
+      responses:
+        '200':
+          description: Successful delete
+      tags:
+        - containers
+
+  /rest/dam/{instance}/container:
+    post:
+      description: |
+        Create new container
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: payload
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              MainData:
+                type: object
+                description: 'Oggetto che descrive i metadati del contenitore'
+      responses:
+        '201':
+          description: Successful response
+          schema:
+            type: object
+      tags:
+        - containers
+
+  /rest/dam/{instance}/container/{containerId}/MainData/{resourceId}:
+    put:
+      description: |
+        Modify MainData of a container.
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: containerId
+          in: path
+          description: ID of a Media
+          type: string
+          required: true
+        - name: resourceId
+          in: path
+          description: Id of the resource to edit
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Request payload
+          required: true
+          schema:
+            type: object
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+      tags:
+        - containers
+
+  /rest/dam/{instance}/container/{containerId}/RelatedMedia:
+    post:
+      description: Link one or more media
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: containerId
+          in: path
+          description: ID of container
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Request payload
+          required: true
+          schema:
+            type: object
+            properties:
+              addMedias:
+                type: array
+                items:
+                  type: string
+                  description: Id Media to link
+      responses:
+        '201':
+          description: Successful response
+      tags:
+        - containers
+
+  /rest/dam/{instance}/container/{containerId}/RelatedMedia/{idRelatedMedia}:
+    delete:
+      description: Unlink one media
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: containerId
+          in: path
+          description: ID of container
+          type: string
+          required: true
+        - name: idRelatedMedia
+          in: path
+          description: ID of media to unlink
+          type: string
+          required: true
+      responses:
+        '201':
+          description: Successful response
+      tags:
+        - containers
+
+  /rest/dam/{instance}/container/{containerId}/ContainedMedia:
+    post:
+      description: Insert one or more media in container
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: containerId
+          in: path
+          description: ID of container
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Request payload
+          required: true
+          schema:
+            type: object
+            properties:
+              addMedias:
+                type: array
+                items:
+                  type: string
+                  description: Id Media to insert
+      responses:
+        '201':
+          description: Successful response
+      tags:
+        - containers
+
+  /rest/dam/{instance}/container/{containerId}/ContainedMedia/{idContainedMedia}:
+    delete:
+      description: Remove one media from container
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: containerId
+          in: path
+          description: ID of container
+          type: string
+          required: true
+        - name: idContainedMedia
+          in: path
+          description: ID of media to remove
+          type: string
+          required: true
+        - name: removeFromDam
+          in: query
+          type: boolean
+          description: Eliminazione media dal DAM
+      responses:
+        '201':
+          description: Successful response
+      tags:
+        - containers

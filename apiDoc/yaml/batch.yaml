@@ -1,0 +1,73 @@
+  /rest/dam/{instance}/batch:
+    post:
+      description: Set one or more cron job
+      parameters:
+        - name: instance
+          in: path
+          type: string
+          required: true
+        - name: payload
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              nameStream:
+                type: string
+              medias:
+                type: array
+                items:
+                  type: string
+                  description: Media ID
+              actions:
+                type: array
+                items:
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        description: filp, rotate, crop, resize, format, resample
+
+                      parameters:
+                        type: object
+                        properties:
+                          key:
+                            type: string
+                            description: Key value
+      responses:
+        '201':
+           description: Successful response
+      tags:
+        - batch
+
+  /rest/dam/{instance}/rollback/{modelName}:
+    post:
+      description: Restores a datastream version using the given payload
+      parameters:
+        - name: instance
+          in: path
+          type: string
+          required: true
+        - name: modelName
+          in: path
+          type: string
+          description: Datastream model name
+          required: true
+        - name: payload
+          in: body
+          required: true
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Datastream main ID
+              detailId:
+                type: string
+                description: Datastream version ID
+      responses:
+        '200':
+           description: Successful response with the requested old version of the datastream
+      tags:
+        - batch
+        - versions

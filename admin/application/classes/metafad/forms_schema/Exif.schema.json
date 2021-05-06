@@ -1,0 +1,367 @@
+{
+    "type": "object",
+    "title": "EXIF",
+    "associatedTo": "bytestream",
+    "properties": {
+        "FileDateTime": {
+            "title": "FileDateTime",
+            "type": "number",
+            "meta":{
+                "modelType":"int"
+            },
+            "format":"date"
+        },
+        "FileSize": {
+            "title": "FileSize",
+            "type": "number",
+            "meta":{
+                "modelType":"int",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "size"}
+            }
+        },
+        "FileType": {
+            "title": "FileType",
+            "type": "number",
+            "meta":{
+                "modelType":"int"
+            }
+        },
+        "MimeType": {
+            "title": "MimeType",
+            "type": "string",
+            "meta":{
+                "modelType":"string",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "mime"}
+            }
+        },
+        "SectionsFound": {
+            "title": "SectionsFound",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "ImageDescription": {
+            "title": "ImageDescription",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Make": {
+            "title": "Make",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Model": {
+            "title": "Model",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Orientation": {
+            "title": "Orientation",
+            "type": "number",
+            "meta":{
+                "modelType":"int"
+            }
+        },
+        "XResolution": {
+            "title": "XResolution",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "YResolution": {
+            "title": "YResolution",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "ResolutionUnit": {
+            "title": "ResolutionUnit",
+            "type": "number",
+            "meta":{
+                "modelType":"int",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "resolution_unit"}
+            }
+        },
+        "DateTime":{
+            "title":"DateTime",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            },
+            "format":"date"
+        },
+        "YCbCrPositioning":{
+            "title":"YCbCr Positioning",
+            "type":"number",
+            "meta": {
+                "modelType": "int"
+            }
+        },
+        "Exif_IFD_Pointer":{
+            "title":"Exif_IFD_Pointer",
+            "type":"number",
+            "meta": {
+                "modelType": "int"
+            }
+        },
+        "GPS_IFD_Pointer":{
+            "title":"GPS_IFD_Pointer",
+            "type":"number",
+            "meta": {
+                "modelType": "int"
+            }
+        },
+        "ExposureTime":{
+            "title":"ExposureTime",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "FNumber":{
+            "title":"FNumber",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "ExposureProgram":{
+            "title":"ExposureProgram",
+            "type":"number",
+            "meta": {
+                "modelType": "int"
+            }
+        },
+        "ISOSpeedRatings":{
+            "title":"ISOSpeedRatings",
+            "type":"number",
+            "meta": {
+                "modelType": "int"
+            }
+        },
+        "ExifVersion":{
+            "title":"ExifVersion",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "DateTimeOriginal":{
+            "title":"DateTimeOriginal",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            },
+            "format":"date"
+        },
+        "DateTimeDigitized":{
+            "title":"DateTimeDigitized",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            },
+            "format":"date"
+        },
+        "ComponentsConfiguration":{
+            "title":"ComponentsConfiguration",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "CompressedBitsPerPixel":{
+            "title":"CompressedBitsPerPixel",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "ExposureBiasValue":{
+            "title":"ExposureBiasValue",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "MaxApertureValue":{
+            "title":"MaxApertureValue",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "MeteringMode":{
+            "title":"MeteringMode",
+            "type":"number",
+            "meta": {
+                "modelType": "int"
+            }
+        },
+        "LightSource":{
+            "title":"LightSource",
+            "type":"number",
+            "meta": {
+                "modelType": "int"
+            }
+        },
+        "Flash":{
+            "title":"Flash",
+            "type":"number",
+            "meta": {
+                "modelType": "int"
+            }
+        },
+        "FocalLength":{
+            "title":"FocalLength",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "FlashPixVersion":{
+            "title":"FlashPixVersion",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "ColorSpace":{
+            "title":"ColorSpace",
+            "type":"number",
+            "meta": {
+                "modelType": "int"
+            }
+        },
+        "ExifImageWidth":{
+            "title":"ExifImageWidth",
+            "type":"number",
+            "meta": {
+                "modelType": "int",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "width"}
+            }
+        },
+        "ExifImageLength":{
+            "title":"ExifImageLength",
+            "type":"number",
+            "meta": {
+                "modelType": "int",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "height"}
+            }
+        },
+        "InteroperabilityOffset":{
+            "title":"InteroperabilityOffset",
+            "type":"number",
+            "meta": {
+                "modelType": "int"
+            }
+        },
+        "FileSource":{
+            "title":"FileSource",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "SceneType":{
+            "title":"SceneType",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "CustomRendered":{
+            "title":"CustomRendered",
+            "type":"number",
+            "meta": {
+                "modelType": "int"
+            }
+        },
+        "ExposureMode":{
+            "title":"ExposureMode",
+            "type":"number",
+            "meta": {
+                "modelType": "int"
+            }
+        },
+        "WhiteBalance":{
+            "title":"WhiteBalance",
+            "type":"number",
+            "meta": {
+                "modelType": "int"
+            }
+        },
+        "SceneCaptureType":{
+            "title":"SceneCaptureType",
+            "type":"number",
+            "meta": {
+                "modelType": "int"
+            }
+        },
+        "GPSVersion":{
+            "title":"GPSVersion",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "GPSLatitudeRef":{
+            "title":"GPSLatitudeRef",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "GPSLongitudeRef":{
+            "title":"GPSLongitudeRef",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "GPSStatus":{
+            "title":"GPSStatus",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "GPSMapDatum":{
+            "title":"GPSMapDatum",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "GPSDateStamp":{
+            "title":"GPSDateStamp",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "InterOperabilityIndex":{
+            "title":"InterOperabilityIndex",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        },
+        "InterOperabilityVersion":{
+            "title":"InterOperabilityVersion",
+            "type":"string",
+            "meta": {
+                "modelType": "string"
+            }
+        }
+    },
+    "required": []
+}

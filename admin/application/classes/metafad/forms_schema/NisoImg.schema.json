@@ -1,0 +1,193 @@
+{
+    "type": "object",
+    "title": "NisoImg",
+    "associatedTo": "bytestream",
+    "properties": {
+        "image_length": {
+            "title": "Image length",
+            "type": "string",
+            "meta":{
+                "modelType":"string",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "height"}
+            }
+        },
+        "image_width": {
+            "title": "Image width",
+            "type": "string",
+            "meta":{
+                "modelType":"string",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "width"}
+            }
+        },
+        "source_x_dimension": {
+            "title": "Source X dimension",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "source_y_dimension": {
+            "title": "Source Y dimension",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "sampling_frequency_unit": {
+            "title": "Sampling frequency unit",
+            "type": "string",
+            "meta":{
+                "modelType":"string",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "sampling_frequency_unit"}
+            }
+        },
+        "sampling_frequency_plane": {
+            "title": "Sampling frequency plane",
+            "type": "string",
+            "meta":{
+                "modelType":"string",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "sampling_frequency_plane"}
+            }
+        },
+        "x_sampling_frequency": {
+            "title": "X Sampling Frequency",
+            "type": "string",
+            "meta":{
+                "modelType":"string",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "x_sampling_frequency"}
+            }
+        },
+        "y_sampling_frequency": {
+            "title": "Y Sampling Frequency",
+            "type": "string",
+            "meta":{
+                "modelType":"string",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "y_sampling_frequency"}
+            }
+        },
+        "bit_per_sample": {
+            "title": "Bit per sample",
+            "type": "string",
+            "meta":{
+                "modelType":"string",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "bit_per_sample"}
+            }
+        },
+        "photometric_interpretation": {
+            "title": "Photometric interpretation",
+            "type": "string",
+            "meta":{
+                "modelType":"string",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "photometric_interpretation"}
+            }
+        },
+        "name": {
+            "title": "Name",
+            "type": "string",
+            "meta":{
+                "modelType":"string",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "nido_format_name"}
+            }
+        },
+        "mime": {
+            "title": "Mime",
+            "type": "string",
+            "meta":{
+                "modelType":"string",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "mime"}
+            }
+        },
+        "compression": {
+            "title": "Compression",
+            "type": "string",
+            "meta":{
+                "modelType":"string",
+                "fallback": {"type": "dam.models.fallbacks.ImgFallback", "command": "compression"}
+            }
+        },
+        "source_type": {
+            "title": "Source type",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "scanning_agency": {
+            "title": "Scanning agency",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "device_source": {
+            "title": "Device source",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "scanning_system": {
+            "title": "Scanning system",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "scanner_manufacturer": {
+            "title": "Scanner manufacturer",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "scanner_model": {
+            "title": "Scanner model",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "capture_software": {
+            "title": "Capture software",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "target_type": {
+            "title": "Target type",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "target_id": {
+            "title": "Target id",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "image_data": {
+            "title": "Image data",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "performance_data": {
+            "title": "Performance data",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "profiles": {
+            "title": "Profiles",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        }
+    }
+}

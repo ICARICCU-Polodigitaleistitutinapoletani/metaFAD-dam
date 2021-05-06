@@ -1,0 +1,94 @@
+{
+	"type": "object",
+	"title": "MAINDATA",
+	"associatedTo":"media",
+    "watchFormChanges": "true",
+	"properties": {
+		"title": {
+			"title": "Titolo",
+			"type": "string",
+			"meta": {
+                "modelType": "string",
+                "searchable": true,
+                "solrField": "title_s_lower"
+            }
+		},
+		"filename": {
+			"title": "Nome del file",
+			"type": "string",
+			"meta": {
+                "modelType": "string",
+                "searchable": true,
+                "solrField": "file_name_s"
+			}
+		},
+		"author": {
+            "key":"author",
+			"title": "Autore",
+			"type": "array",
+			"format": "uiselect",
+			"mapFuncTagging": "MainData.form.0.items.0.items.1.options",
+			"mapFuncCallback": "MainData.form.0.items.0.items.1.options",
+			"autocomplete": "author_ss_lower",
+			"tagging":true,
+			"items":[],
+			"meta": {
+                "modelType": "array",
+                "searchable": true,
+                "solrField": "authors_ss_lower",
+                "facet": true
+            }
+		},
+		"date": {
+			"title": "Data",
+			"type": "string",
+            "format": "date",
+            "meta": {
+                "modelType": "date"
+            }
+		},
+        "category": {
+            "key":"category",
+			"title": "Categoria",
+			"type": "array",
+			"format": "uiselect",
+			"autocomplete": "category_ss_lower",
+			"tagging": true,
+			"mapFuncTagging": "MainData.form.0.items.0.items.4.options",
+			"mapFuncCallback": "MainData.form.0.items.0.items.4.options",
+			"items":[],
+			"meta": {
+                "modelType": "array",
+                "searchable": true,
+                "solrField": "category_ss_lower",
+                "facet": true
+            }
+		},
+		"tag": {
+            "key":"tag",
+			"title": "Tag",
+			"type": "array",
+			"format": "uiselect",
+			"autocomplete": "tags_ss_lower",
+			"tagging": true,
+			"mapFuncTagging": "MainData.form.0.items.0.items.5.items.0.options",
+			"mapFuncCallback": "MainData.form.0.items.0.items.5.items.0.options",
+			"items":[],
+			"meta": {
+                "modelType": "array",
+                "searchable": true,
+                "solrField": "tags_ss_lower",
+                "facet": true
+            }
+		},
+		"description": {
+			"title": "Descrizione",
+			"type": "string",
+			"format": "html",
+			"meta": {
+                "modelType": "string"
+            }
+		}
+	},
+	"required": []
+}

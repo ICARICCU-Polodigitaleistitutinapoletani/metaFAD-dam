@@ -1,0 +1,39 @@
+  /rest/dam/{instance}/autocomplete:
+    post:
+      description: |
+        Request autocomplete service
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: ricerca
+          in: body
+          description: Filtro di autocompletamento
+          required: true
+          schema:
+            type: object
+            properties:
+              field:
+                type: string
+                description: 'Indicazione del campo su cui filtrare i dati'
+              value:
+                type: string
+                description: 'Indicazione del valore con cui filtrare i dati'
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              field:
+                type: string
+                description: 'Indicazione del campo su cui filtrare i dati'
+              value:
+                type: array
+                items:
+                  type: string
+                description: 'Array di valori corrispondenti al filtro di autocompletamento richiesto'
+      tags:
+        - autocomplete

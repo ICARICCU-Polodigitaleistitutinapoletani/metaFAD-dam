@@ -1,0 +1,8 @@
+*.DS_Store
+.idea/
+.vscode/settings.json
+fe
+admin/cache/*
+!admin/cache/.gitkeep
+admin/application/config/config_localhost.xml
+vendor/*

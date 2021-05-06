@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<model:Model xmlns:pnx="http://www.pinax.org/dtd/1.0/" xmlns:model="pinax.models.*/"
+             model:tableName="dam.models.Media" model:usePrefix="true" model:type="document">
+    <model:Define>
+        <model:Field name="uuid" type="string" index="true"/>
+        <model:Field name="instance" type="string"/>
+        <model:Field name="userId" type="int" index="true"/>
+        <model:Field name="datastream" type="array"/>
+        <model:Field name="bytestream" type="array"/>
+        <model:Field name="related_collectionFolder" type="array"/>
+        <model:Field name="media_parent" type="array"/>
+        <model:Field name="media_child" type="array"/>
+        <model:Field name="media_type" type="string"/>
+        <model:Field name="is_contained" type="int"/>
+        <model:Field name="collection" type="array"/>
+        <model:Field name="folder" type="string"/>
+        <model:Field name="bytestream_last_update" type="string"/>
+    </model:Define>
+
+    <model:Script parent="model">
+    <![CDATA[
+public function load($id, $status = 'PUBLISHED', $languageId = null)
+{
+    return $this->find(array('uuid' => $id));
+}
+    ]]>
+    </model:Script>
+
+    <model:Query name="showHistory" type="function" arguments="id,type">
+        <![CDATA[ $iterator->addSelect('u.*')
+           ->leftJoin($iterator::DOCUMENT_TABLE_ALIAS, 'users_tbl', 'u',
+                  $iterator->expr()->eq($iterator::DOCUMENT_DETAIL_TABLE_ALIAS.'.'.$iterator::DOCUMENT_DETAIL_FK_USER, 'u.user_id'))
+           ->where("document_id", $id)
+           ->where("document_type", $type)
+           ->orderBy('document_detail_modificationDate', 'DESC')
+           ->allStatuses();
+    ]]>
+    </model:Query>
+</model:Model>

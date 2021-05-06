@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<model:Model
+    xmlns:pnx="http://www.pinax.org/dtd/1.0/"
+    xmlns:model="pinax.models.*/"
+    model:tableName="dam.models.DataStream"
+    model:usePrefix="true"
+    model:type="document">
+
+    <model:Define>
+        <model:Field name="instance" type="string" index="false"/>
+        <model:Field name="fk_id" type="string" index="false"/>
+    </model:Define>
+
+</model:Model>

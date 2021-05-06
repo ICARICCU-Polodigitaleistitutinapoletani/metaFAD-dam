@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<pnx:Routing>
+    <pnx:Route method="POST" value="rest/dam/{value=instance}/upload" controller="dam.rest.controllers.Upload"/>
+
+    <pnx:Route method="GET"
+               value="rest/dam/{value=instance}/get/{value=mediaId}/{value=bytestreamName}"
+               controller="dam.rest.controllers.Main.GetBytestream"/>
+
+    <pnx:Route method="GET"
+               value="rest/dam/{value=instance}/resize-stream/{value=mediaId}/{value=bytestreamName}/{value=newBytestreamName}"
+               controller="dam.rest.controllers.Main.ResizeAndCreateBytestream"/>
+
+    <pnx:Route method="GET"
+               value="rest/dam/{value=instance}/resize/{value=mediaId}/{value=bytestreamName}"
+               controller="dam.rest.controllers.Main.ResizeBytestream"/>
+
+
+    <!-- Main -->
+    <pnx:Route method="GET" value="rest/dam/{value=instance}/information" controller="dam.rest.controllers.Main.Information"/>
+    <pnx:Route method="POST" value="rest/dam/{value=instance}/search" controller="dam.rest.controllers.Main.Search"/>
+    <pnx:Route method="POST" value="rest/dam/{value=instance}/autocomplete" controller="dam.rest.controllers.Main.Autocomplete"/>
+    <pnx:Route method="POST" value="rest/dam/{value=instance}/batch" controller="dam.rest.controllers.Main.Batch"/>
+    <pnx:Route method="POST" value="rest/dam/{value=instance}/rollback/{value=modelName}" controller="dam.rest.controllers.Main.Rollback"/>
+
+    <!-- Media -->
+    <pnx:Route method="GET" value="rest/dam/{value=instance}/exists/md5/{value=md5}" controller="dam.rest.controllers.Media.Exists"/>
+
+    <pnx:Route method="GET" value="rest/dam/{value=instance}/media/{value=mediaId}" controller="dam.rest.controllers.Media.GetMedia"/>
+    <pnx:Route method="POST" value="rest/dam/{value=instance}/media" controller="dam.rest.controllers.Media.PostMedia"/>
+    <pnx:Route method="POST" value="rest/dam/{value=instance}/media/{value=mediaId}/{value=modelName}" controller="dam.rest.controllers.Media.PostMediaResource"/>
+    <pnx:Route method="PUT" value="rest/dam/{value=instance}/media/{value=mediaId}/bytestream/originalReplace" controller="dam.rest.controllers.ByteStream.ReplaceOriginal"/>
+    <pnx:Route method="DELETE" value="rest/dam/{value=instance}/media/{value=mediaId}" controller="dam.rest.controllers.Media.DeleteMedia"/>
+    <pnx:Route method="DELETE" value="rest/dam/{value=instance}/media/{value=mediaId}/{value=modelName}/{value=modelId}" controller="dam.rest.controllers.Media.DeleteMediaResource"/>
+
+    <pnx:Route method="POST" value="rest/dam/{value=instance}/removeMedias" controller="dam.rest.controllers.Media.RemoveMedias"/>
+
+    <pnx:Route method="POST" value="rest/dam/{value=instance}/media/{value=mediaId}/datastream/{value=modelName}" controller="dam.rest.controllers.Media.SaveDataStream"/>
+    <pnx:Route method="PUT" value="rest/dam/{value=instance}/media/{value=mediaId}/datastream/{value=modelName}/{value=modelId}" controller="dam.rest.controllers.Media.SaveDataStream"/>
+    <pnx:Route method="DELETE" value="rest/dam/{value=instance}/media/{value=mediaId}/datastream/{value=modelName}/{value=modelId}" controller="dam.rest.controllers.Media.DeleteDataStream"/>
+
+    <pnx:Route method="GET" value="rest/dam/{value=instance}/media/{value=mediaId}/bytestream/{value=byteStreamId}/datastream/{value=modelName}" controller="dam.rest.controllers.ByteStream.GetDataStream"/>
+    <pnx:Route method="POST" value="rest/dam/{value=instance}/media/{value=mediaId}/bytestream/{value=byteStreamId}/datastream/{value=modelName}" controller="dam.rest.controllers.Media.SaveDataStream"/>
+    <pnx:Route method="PUT" value="rest/dam/{value=instance}/media/{value=mediaId}/bytestream/{value=byteStreamId}/datastream/{value=modelName}/{value=modelId}" controller="dam.rest.controllers.Media.SaveDataStream"/>
+
+    <pnx:Route method="GET" value="rest/dam/{value=instance}/media/{value=mediaId}/bytestream/{value=byteStreamId}/datastream/{value=modelName}/history" controller="dam.rest.controllers.ByteStream.GetHistory"/>
+
+    <pnx:Route method="GET" value="rest/dam/{value=instance}/bytestream/edit/{value=downloadMode}/{value=mediaId}/{value=name}/{value=parameter}" controller="dam.rest.controllers.Media.Download"/>
+
+    <pnx:Route method="GET" value="rest/dam/{value=instance}/bytestream/getAllTypes" controller="dam.rest.controllers.ByteStream.GetAllTypes"/>
+
+    <!-- Container -->
+    <pnx:Route method="GET" value="rest/dam/{value=instance}/container/{value=containerId}" controller="dam.rest.controllers.Container.GetContainer"/>
+    <pnx:Route method="POST" value="rest/dam/{value=instance}/container" controller="dam.rest.controllers.Container.PostContainer"/>
+    <pnx:Route method="DELETE" value="rest/dam/{value=instance}/container/{value=containerId}" controller="dam.rest.controllers.Container.DeleteContainer"/>
+    <pnx:Route method="PUT" value="rest/dam/{value=instance}/container/{value=containerId}/{value=modelName}/{value=modelId}" controller="dam.rest.controllers.Container.PutContainer"/>
+    <pnx:Route method="POST" value="rest/dam/{value=instance}/container/{value=containerId}/{value=mediaType}" controller="dam.rest.controllers.Container.LinkMediaToContainer"/>
+    <pnx:Route method="DELETE" value="rest/dam/{value=instance}/container/{value=containerId}/{value=mediaType}/{value=mediaId}" controller="dam.rest.controllers.Container.UnlinkMediaInContainer"/>
+
+    <!-- CollectionFolder -->
+    <pnx:Route method="POST" value="rest/dam/{value=instance}/{value=type}"
+               controller="dam.rest.controllers.CollectionFolder.AddCollectionFolder"/>
+    <pnx:Route method="PUT" value="rest/dam/{value=instance}/{value=type}/{value=collectionFolderId}"
+               controller="dam.rest.controllers.CollectionFolder.EditCollectionFolder"/>
+    <pnx:Route method="GET"
+               value="rest/dam/{value=instance}/{value=type}/{value=parentCollectionFolderId}/children"
+               controller="dam.rest.controllers.CollectionFolder.GetCollectionFolderChildren"/>
+    <pnx:Route method="POST"
+               value="rest/dam/{value=instance}/{value=type}/{value=collectionFolderId}/media"
+               controller="dam.rest.controllers.CollectionFolder.AddMediaToCollectionFolder"/>
+    <pnx:Route method="DELETE"
+               value="rest/dam/{value=instance}/{value=type}/{value=collectionFolderId}/media/{value=mediaId}"
+               controller="dam.rest.controllers.CollectionFolder.RemoveMediaFromCollectionFolder"/>
+    <pnx:Route method="DELETE"
+               value="rest/dam/{value=instance}/{value=type}/{value=collectionFolderId}"
+               controller="dam.rest.controllers.CollectionFolder.DeleteCollectionFolder"/>
+
+
+
+</pnx:Routing>

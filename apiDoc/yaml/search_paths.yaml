@@ -1,0 +1,199 @@
+swagger: '2.0'
+info:
+  version: 0.0.1
+  title: DAM Api
+paths:
+  /rest/dam/{instance}/search:
+    post:
+      description: |
+        Gets `Search` objects.
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: ricerca
+          in: body
+          description: Query di ricerca
+          required: true
+          schema:
+            type: object
+            properties:
+              sort:
+                type: object
+                properties:
+                  field:
+                    type: string
+                    description: "Campo su cui fare l'ordinamento (es \"data\")"
+                  order:
+                    type: string
+                    description: 'Tipo di ordinamento (es "ASC")'
+                description: Ordinamento
+              page:
+                type: number
+                description: Numero di pagina
+              search:
+                type: array
+                items:
+                  type: object
+                  description: 'Oggetto che descrive il campo di ricerca applicato (es {"title":"David"})'
+              filters:
+                type: array
+                items:
+                  type: object
+                  description: 'Oggetto che descrive il filtro di ricerca applicato (es {"author":"Michelangelo"})'
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              numFound:
+                type: number
+                description: Numero totale di items della ricerca
+              page:
+                type: number
+                description: Numero di pagina relativa ai risultati ricevuti
+              pages:
+                type: number
+                description: Numero di pagine totali
+              filters_applied:
+                type: object
+                properties:
+                  search:
+                    type: array
+                    items:
+                      type: object
+                      description: 'Oggetto che descrive il campo di ricerca applicato (es {"title":"David"})'
+                  filters:
+                    type: array
+                    items:
+                      type: object
+                      description: 'Oggetto che descrive il filtro di ricerca applicato (es {"author":"Michelangelo"})'
+                description: Oggetto che riassume i filtri applicati
+              filters:
+                type: object
+                properties:
+                  type:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        label:
+                          type: string
+                          description: Label relativa al filtro
+                        num:
+                          type: number
+                          description: Numero di items collegati al filtro
+                  author:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        label:
+                          type: string
+                          description: Label relativa al filtro
+                        num:
+                          type: number
+                          description: Numero di items collegati al filtro
+                  category:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        label:
+                          type: string
+                          description: Label relativa al filtro
+                        num:
+                          type: number
+                          description: Numero di items collegati al filtro
+                  tag:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        label:
+                          type: string
+                          description: Label relativa al filtro
+                        num:
+                          type: number
+                          description: Numero di items collegati al filtro
+                  collection:
+                    type: array
+                    items:
+                      type: string
+                  folder:
+                    type: array
+                    items:
+                      type: string
+                description: Filtri di ricerca possibili
+              results:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    type:
+                      type: string
+                      description: 'Tipo del media ("IMAGE","CONTAINER",ecc..)'
+                    file_extension:
+                      type: string
+                      description: Estensione del file
+                    title:
+                      type: string
+                      description: Titolo del media
+                    thumbnail:
+                      type: string
+                      description: URL del thumbnail media
+                    bytestream_num:
+                      type: number
+                      description: Numero di bytestream del media
+                    datastream_num:
+                      type: number
+                      description: Numero di datastream del media
+                    date:
+                      type: string
+                      format: date-time
+                      description: Data ultima modifica
+                    media_childs:
+                      type: array
+                      items:
+                        type: string
+                      description: Array dei media collegati al media stesso
+                    media_parents:
+                      type: array
+                      items:
+                        type: string
+                      description: Array dei media a cui il media è collegato
+                    related_collections:
+                      type: array
+                      items:
+                        type: string
+                      description: Array di collezioni in cui il media è presente
+                    bytestream_batch:
+                      type: boolean
+                      description: riferimento per capire se ci sono azioni batch in corso per il media
+                description: Array dei risultati
+      tags:
+        - search
+
+#  /rest/dam/{instance}/delete/{id}:
+#    get:
+#      description: Delete media
+#      parameters:
+#        - name: instance
+#          in: path
+#          description: Instance of DAM
+#          type: string
+#          required: true
+#        - name: id
+#          in: path
+#          description: ID of the media to delete
+#          type: number
+#          format: int64
+#          required: true
+#      responses:
+#        '200':
+#          description: Successful response

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnx:Config xmlns:pnx="http://www.pinax.org/dtd/1.0/">
+    <pnx:Param name="pinaxcms.content.history" value="true"/>
+    <pnx:Param name="pinax.dataAccess.document.enableComment" value="true"/>
+
+    <pnx:Param name="dam.fileTypes"><![CDATA[
+    {
+        "IMAGE": ["jpg", "jpeg", "png", "gif", "tif", "tiff"],
+        "OFFICE": ["doc", "docx", "xls", "mdb", "ppt", "pps", "html", "htm", "odb", "odc", "odf", "odg", "odi", "odm", "odp", "ods", "odt", "otc", "otf", "otg", "oth", "oti", "otp", "ots", "ott"],
+        "ARCHIVE": ["zip", "rar", "7z", "tar", "gz", "tgz"],
+        "AUDIO": ["wav", "mp3", "aif"],
+        "PDF": ["pdf"],
+        "VIDEO": ["avi", "mov", "x-flv", "wmv", "mp4", "m4v", "mpg", "MOV"],
+        "FLASH": ["swf"],
+        "OTHER": []
+    }
+    ]]></pnx:Param>
+    <pnx:Param name="dam.typeOfChange"><![CDATA[
+    {
+    "IMAGE": {
+        "conversione": [
+            "jpg",
+            "png",
+            "tif"
+        ],
+        "flip": [],
+        "ruota": [],
+        "taglia": [],
+        "ridimensiona": []
+    },
+    "VIDEO": {
+        "conversione": [
+            "avi",
+            "mov",
+            "wmv",
+            "m4v",
+            "mpg"
+        ]
+    }
+    }
+    ]]></pnx:Param>
+    <pnx:Param name="dam.solr.url" value="http://localhost:8983/solr/dam/"/>
+    <pnx:Param name="dam.solr.rowsPerPage" value="24"/>
+    <pnx:Param name="dam.solr.facetFields" value="media_type_s,collection_ss,folder_s"/>
+
+    <pnx:Param name="FILESYSTEM_PATH" value="."/>
+
+    <pnx:Param name="PDF_THUMB" value="thumbnail/PDF_LOGO.png"/>
+    <pnx:Param name="OFFICE_THUMB" value="thumbnail/OFFICE_LOGO.png"/>
+    <pnx:Param name="AUDIO_THUMB" value="thumbnail/AUDIO_LOGO.png"/>
+    <pnx:Param name="VIDEO_THUMB" value="thumbnail/VIDEO_LOGO.png"/>
+    <pnx:Param name="ARCHIVE_THUMB" value="thumbnail/ARCHIVE_LOGO.png"/>
+    <pnx:Param name="OTHER_THUMB" value="thumbnail/OTHER_LOGO.png"/>
+    <pnx:Param name="CONTAINER_THUMB" value="thumbnail/CONTAINER_LOGO.png"/>
+    <pnx:Param name="IMAGE_THUMB" value="thumbnail/IMAGE_LOGO.png"/>
+    <pnx:Param name="THUMB_VIDEO_FORMAT" value="jpg"/>
+
+
+    <pnx:Param name="IMG_ORIGINAL_MAX_WIDTH" value="5000"/>
+    <pnx:Param name="IMG_ORIGINAL_MAX_HEIGHT" value="5000"/>
+
+    <!-- TODO -->
+    <pnx:Param name="MODIFIED_UPLOAD_DIR" value=""/>
+    <pnx:Param name="MAX_NUM_UPLOAD_FILES" value=""/>
+    <pnx:Param name="MAX_SIZE_UPLOAD_FILE" value=""/>
+    <pnx:Param name="TRASH_DIR" value="trash/"/>
+
+    <pnx:Param name="dam.types_with_static_thumbnail" value="PDF,OFFICE,AUDIO,ARCHIVE,OTHER,CONTAINER"/>
+
+
+    <pnx:Param name="dam.facet.limit" value="300" />
+    <pnx:Param name="JPG_COMPRESSION" value="90" />
+
+    <pnx:Import src="config_dam_instance.xml" />
+</pnx:Config>

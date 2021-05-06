@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<model:Model xmlns:pnx="http://www.pinax.org/dtd/1.0/" xmlns:model="pinax.models.*/"
+             model:tableName="dam.models.CollectionFolder" model:usePrefix="true" model:type="document">
+    <model:Define>
+        <model:Field name="instance" type="string" index="true"/>
+        <model:Field name="userId" type="int" index="true"/>
+        <model:Field name="title" type="string" index="true"/>
+        <model:Field name="parent" type="string" index="true"/>
+        <model:Field name="type" type="string" index="true"/>
+        <model:Field name="media_id" type="array" index="true"/>
+        <model:Field name="path" type="string" index="true"/>
+    </model:Define>
+
+</model:Model>

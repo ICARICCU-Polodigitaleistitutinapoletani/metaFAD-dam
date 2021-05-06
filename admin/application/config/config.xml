@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnx:Config xmlns:pnx="http://www.pinax.org/dtd/1.0/">
+    <pnx:Import src="config_common.xml" />
+    <pnx:Param name="DB_TYPE" value="mysql" />
+    <pnx:Param name="DB_HOST" value="{{env:MYSQL_HOST}}" />
+    <pnx:Param name="DB_NAME" value="{{env:MYSQL_DB_NAME_DAM}}" />
+    <pnx:Param name="DB_USER" value="{{env:MYSQL_USERNAME}}" />
+    <pnx:Param name="DB_PSW" value="{{env:MYSQL_PASSWORD}}" />
+    <pnx:Param name="DB_PREFIX" value="" />
+
+    <pnx:Param name="dam.url" value="{{env:DAM_REST_URL}}" />
+    <pnx:Param name="dam.solr.url_env" value="{{env:SOLR_HOST}}" />
+    <pnx:Param name="dam.solr.core_env" value="{{env:SOLR_CORE_DAM}}" />
+    <pnx:Param name="dam.solr.url" value="{{dam.solr.url_env}}/solr/{{dam.solr.core_env}}/" />
+    <pnx:Param name="TEMPORARY_UPLOAD_DIR" value="{{env:DAM_UPLOAD_FOLDER}}"/>
+    <pnx:Param name="UPLOAD_DIR" value="{{env:DAM_STORAGE_FOLDER}}"/>
+
+    <pnx:Param name="dam.resize.watermark" value="{{env:DAM_RESIZE_WATERMARK,false}}" />
+
+    <pnx:Param name="DEBUG" value="true" />
+</pnx:Config>

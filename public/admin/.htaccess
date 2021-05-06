@@ -1,0 +1,22 @@
+SetEnvIf Origin "http(s)?://(www.)?(localhost|localhost:8000|localhost:3000)$" AccessControlAllowOrigin=$0$1
+Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+Header set Access-Control-Allow-Methods "POST, GET, PUT, OPTIONS, PATCH, DELETE"
+Header set Access-Control-Allow-Headers "X-Accept-Charset,X-Accept,Content-Type,X-Requested-With,X-File-Name,X-HTTP-Method-Override, Cache-control, Content-Length"
+Header set Access-Control-Allow-Credentials true
+
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(ajax\.php|bin/|static/|cache/|favicon\.ico) - [L]
+
+    RewriteRule ^application/mediaArchive - [L]
+    RewriteRule ^application.*\.js$ - [L]
+    RewriteRule ^application(/|$) - [F,NC]
+    RewriteRule ^vendor(/|$) - [F,NC]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-l
+    RewriteRule ^rest/(.*)$ rest.php?$1 [QSA,L]
+</IfModule>
+

@@ -1,0 +1,107 @@
+  /rest/dam/{instance}/information:
+    get:
+      description: |
+        Gets initial information and configuration object.
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              schemaForm:
+                type: object
+                description: 'Oggetto che descrive le informazioni legate al media'
+                properties:
+                  MainData:
+                    type: object
+                    properties:
+                      schema:
+                        type: object
+                        description: 'Oggetto con lo schema per costruire i metadati del media'
+                        properties:
+                          properties:
+                            type: object
+                            description: 'Oggetto che descrive le proprietà relative ai metadati di ogni media'
+                          required: 
+                            type: array
+                            description: 'Array di proprietà obbligatorie'
+                            items:
+                              type: string
+                          title:
+                            type: string
+                            description: 'Titolo della sezione'
+                          type:
+                            type: string
+                            description: 'Tipo della sezione'
+                          watchFormChanges:
+                            type: boolean
+                      form:
+                        type: array
+                        description: 'Oggetto per costruire il codice con schema forms relativo ai metadati del media'
+                        items:
+                          type: object
+                  datastream:
+                    type: object
+                    properties:
+                      IMAGE:
+                        type: object
+                        description: 'Esempio di un oggetto che descrive le informazioi specifiche di un media di tipo IMAGE'
+                        properties:
+                          exif:
+                            type: object
+                            properties:
+                              schema:
+                                type: object
+                                description: 'Oggetto con lo schema per costruire i dati exif di ogni media IMAGES'
+                                properties:
+                                  properties:
+                                    type: object
+                                    description: 'Oggetto che descrive le proprietà relative ai dati exif di ogni media IMAGE'
+                                  required: 
+                                    type: array
+                                    description: 'Array di proprietà obbligatorie'
+                                    items:
+                                      type: string
+                                  title:
+                                    type: string
+                                    description: 'Titolo della sezione'
+                                  type:
+                                    type: string
+                                    description: 'Tipo della sezione'
+                                  watchFormChanges:
+                                    type: boolean
+                              form:
+                                type: array
+                                description: 'Oggetto per costruire il codice con schema forms relativo ai dati exif di ogni media IMAGE'
+                                items:
+                                  type: object
+                          nisoimg:
+                            type: object
+                            description: 'Vedi proprietà exif'
+                      form:
+                        type: array
+                        items:
+                          type: object
+              filtersLanguage:
+                type: object
+                description: 'Oggetto per tradurre le key relative alle proprietà in label comprensibili. ES:{"type":"Tipo file","types":"Tipi file","author":"Autore","authors":"Autori","tag":"Tag","tags":"Tag", "category":"Categoria","categories":"Categorie","collection":"Collezioni","folder":"Cartelle","IMAGE":"Immagini", "CONTAINER":"Contenitori","OFFICE":"Documenti","PDF":"File PDF","ARCHIVE":"File compressi", "AUDIO":"Audio","VIDEO":"Video"}'
+              fileTypes:
+                type: object
+                description: 'Descrizione dei tipi di file compatibili per i vari tipi di media'
+              maxNumUploadFile:
+                type: number
+                description: 'Numero massimo upload contemporanei'
+              maxSizeUploadFile:
+                type: number
+                description: 'Dimensione massima upload'
+              rowPerPage:
+                type: number
+                description: 'Numero di media da visualizzare per pagina'
+      tags:
+        - information

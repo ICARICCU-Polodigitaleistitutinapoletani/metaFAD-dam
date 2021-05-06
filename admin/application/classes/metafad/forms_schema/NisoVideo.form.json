@@ -1,0 +1,358 @@
+[
+  {
+    "type": "section",
+    "htmlClass": "row",
+    "items": [
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "File Modification Date/Time"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "File Access Date/Time"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "File Inode Change Date/Time"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Major Brand"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Minor Version"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Compatible Brands"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Movie Data Offset"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Movie Header Version"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Duration"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Preferred Rate"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Preferred Volume"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Preview Time"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Preview Duration"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Poster Time"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Selection Time"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Selection Duration"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Next Track ID"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Track Header Version"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Track ID"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Track Duration"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Track Layer"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Track Volume"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Image Width"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Image Height"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Graphics Mode"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Op Color"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Compressor ID"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Source Image Width"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Source Image Height"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "X Resolution"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Y Resolution"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Bit Depth"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Video Frame Rate"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Matrix Structure"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Media Header Version"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Media Time Scale"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Media Duration"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Media Language Code"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Handler Description"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Balance"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Audio Format"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Audio Channels"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Audio Bits Per Sample"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Audio Sample Rate"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Handler Type"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Handler Vendor ID"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Encoder"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Avg Bitrate"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Image Size"
+        ]
+      },
+      {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+          "Rotation"
+        ]
+      }
+    ]
+  }
+]

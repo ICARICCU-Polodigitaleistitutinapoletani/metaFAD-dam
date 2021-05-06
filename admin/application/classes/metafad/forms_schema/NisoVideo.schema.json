@@ -1,0 +1,362 @@
+{
+    "type": "object",
+    "title": "NISO VIDEO",
+    "associatedTo": "bytestream",
+    "properties": {
+        "File Modification Date/Time": {
+            "title": "File modification date/time",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "File Access Date/Time": {
+            "title": "File access date/time",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "File Inode Change Date/Time": {
+            "title": "File inode change date/time",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Major Brand": {
+            "title": "Major brand",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Minor Version": {
+            "title": "Minor version",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "sampling_frequency_plane": {
+            "title": "Sampling frequency plane",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Compatible Brands": {
+            "title": "Compatible brands",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Movie Data Offset": {
+            "title": "Movie data offset",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Movie Header Version": {
+            "title": "Movie header version",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Duration": {
+            "title": "Duration",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Preferred Rate": {
+            "title": "Preferred rate",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Preferred Volume": {
+            "title": "Preferred volume",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Preview Time": {
+            "title": "Preview time",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Preview Duration": {
+            "title": "Preview duration",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Poster Time": {
+            "title": "Poster time",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Selection Time": {
+            "title": "Selection time",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Selection Duration": {
+            "title": "Selection duration",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Next Track ID": {
+            "title": "Next track ID",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Track Header Version": {
+            "title": "Track header version",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Track ID": {
+            "title": "Track ID",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Track Duration": {
+            "title": "Track Duration",
+            "type": "string",
+            "meta_modelType":"string"
+        },
+        "Track Volume": {
+            "title": "Track volume",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Track Layer": {
+            "title": "Track layer",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Image Width": {
+            "title": "Image width",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Image Height": {
+            "title": "Image height",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Graphics Mode": {
+            "title": "Graphics mode",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Op Color": {
+            "title": "Op color",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Compressor ID": {
+            "title": "Compressor ID",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Source Image Width": {
+            "title": "Source image width",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Source Image Height": {
+            "title": "Source image height",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "X Resolution": {
+            "title": "X resolution",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Y Resolution": {
+            "title": "Y resolution",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Bit Depth": {
+            "title": "Bit depth",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Video Frame Rate": {
+            "title": "Video frame rate",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Matrix Structure": {
+            "title": "Matrix structure",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Media Header Version": {
+            "title": "Media header version",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Media Time Scale": {
+            "title": "Media time scale",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Media Duration": {
+            "title": "media duration",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Media Language Code": {
+            "title": "Media language code",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Handler Description": {
+            "title": "Handler description",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Balance": {
+            "title": "Balance",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Audio Format": {
+            "title": "Audio format",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Audio Channels": {
+            "title": "Audio channels",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Audio Bits Per Sample": {
+            "title": "Audio bits per sample",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Audio Sample Rate": {
+            "title": "Audio sample rate",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Handler Type": {
+            "title": "Handler type",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Handler Vendor ID": {
+            "title": "Handler vendor ID",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Encoder": {
+            "title": "Encoder",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Avg Bitrate": {
+            "title": "Avg bitrate",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Image Size": {
+            "title": "Image size",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        },
+        "Rotation": {
+            "title": "Rotation",
+            "type": "string",
+            "meta":{
+                "modelType":"string"
+            }
+        }
+    }
+}

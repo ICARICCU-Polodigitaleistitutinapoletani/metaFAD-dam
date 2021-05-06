@@ -1,0 +1,183 @@
+[
+    {
+    "type": "section",
+    "htmlClass": "row",
+    "items": [
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "image_length"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "image_width"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "source_x_dimension"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "source_y_dimension"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "sampling_frequency_unit"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "sampling_frequency_plane"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "x_sampling_frequency"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "y_sampling_frequency"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "bit_per_sample"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "photometric_interpretation"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "name"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "mime"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "compression"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "source_type"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "scanning_agency"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "device_source"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "scanning_system"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "scanner_manufacturer"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "scanner_model"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "capture_software"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "target_type"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "target_id"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "image_data"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "performance_data"
+        ]
+        },
+        {
+        "type": "section",
+        "htmlClass": "col-xs-12",
+        "items": [
+            "profiles"
+        ]
+        }
+    ]
+    }
+]

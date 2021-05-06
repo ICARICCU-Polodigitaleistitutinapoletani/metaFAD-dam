@@ -1,0 +1,251 @@
+  /rest/dam/{instance}/media/{mediaId}/bytestream:
+    post:
+      description: Add bytestream
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: ID of media
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Request payload
+          required: true
+          schema:
+            type: object
+            properties:
+              addBytestream:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: 'Name of new bytestream'
+                    url:
+                      type: string
+                      description: 'Temporary url of new bytestream'
+                  description: Id Media to link
+      responses:
+        '201':
+          description: Successful response
+      tags:
+        - bytestreams
+
+  /rest/dam/{instance}/media/{mediaId}/bytestream/{idBytestream}:
+    delete:
+      description: Remove one bytestream
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: ID of media
+          type: string
+          required: true
+        - name: idBytestream
+          in: path
+          description: ID of bytestream to delete
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+      tags:
+        - bytestreams
+
+  /rest/dam/{instance}/get/{mediaId}/{bytestreamName}:
+    get:
+      description: |
+        Gets the named bytestream associated with the requested media.
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: Media Identifier (usually a numeric string or a uuid v.4)
+          type: string
+          required: true
+        - name: bytestreamName
+          in: path
+          description: Bytestream name
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response with the provided file
+        '400':
+          description: Instance, mediaId or bytestream not provided; specified media/bytestream does not exist
+      tags:
+        - bytestreams
+
+  /rest/dam/{instance}/resize/{mediaId}/{bytestreamName}:
+    get:
+      description: |
+        Executes the file resize of the requested bytestream representing an image.
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: Media Identifier (usually a numeric string or a uuid v.4)
+          type: string
+          required: true
+        - name: bytestreamName
+          in: path
+          description: Bytestream name
+          type: string
+          required: true
+        - name: w
+          in: query
+          description: String representing the resize width (or "*" for automatic)
+          type: string
+          required: false
+        - name: h
+          in: query
+          description: String representing the resize height (or "*", automatic)
+          type: string
+          required: false
+        - name: f
+          in: query
+          description: Force flag
+          type: string
+          required: false
+        - name: c
+          in: query
+          description: Crop flag
+          type: boolean
+          required: false
+        - name: co
+          in: query
+          description: Crop offset in pixels
+          type: integer
+          required: false
+      responses:
+        '200':
+          description: Successful response
+      tags:
+        - bytestreams
+
+  /rest/dam/{instance}/media/{mediaId}/bytestream/originalReplace:
+    put:
+      description: |
+        Replaces the original bytestream with the given payload.
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: Media Identifier (usually a numeric string or a uuid v.4)
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Bytestream payload
+          required: true
+          schema:
+            type: object
+            properties:
+              url:
+                type: string
+                description: Url of the new physical file to be referred by the new original bytestream
+              desiredFileName:
+                type: string
+                description: Custom filename to be inserted into the new original bytestream information
+              deleteAll:
+                type: boolean
+                description: Flag to remove all the current bytestreams
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              result:
+                type: string
+                description: Textual representation of the success
+              message:
+                type: string
+                description: Message used to give information about the execution
+        '400':
+          description: Failed execution
+          schema:
+            type: object
+            properties:
+              result:
+                type: string
+                description: Textual representation of the failure
+              message:
+                type: string
+                description: Message used to give information about the failure
+      tags:
+        - bytestreams
+
+  /rest/dam/{instance}/bytestream/getAllTypes:
+    get:
+      description: |
+        Gets all bytestream types.
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response with an array in which every item is a bytestream type string
+      tags:
+        - bytestreams
+
+  /rest/dam/{instance}/bytestream/edit/true/{mediaId}/{name}:
+    get:
+      description: |
+        Downloads a bytestream's physic source
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: Media ID
+          type: string
+          required: true
+        - name: name
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: type_of_change
+          in: query
+          description: setImageFormat
+          type: string
+        - name: format
+          in: query
+          description: png|gif|jpg
+          type: string
+      responses:
+        '200':
+          description: Successful response with provided file
+        '400':
+          description: Failure
+      tags:
+        - bytestreams

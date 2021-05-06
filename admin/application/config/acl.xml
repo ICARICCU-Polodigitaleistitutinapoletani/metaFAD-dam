@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnx:Acl>
+    <pnx:AclService name="dam" default="false">
+        <pnx:AclAction name="edit" allowGroups="1,2" allowUsers="" />
+    </pnx:AclService>
+</pnx:Acl>

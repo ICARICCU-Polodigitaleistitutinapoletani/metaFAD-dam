@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "title": "Right",
+  "associatedTo":"media",
+  "properties":
+  {
+    "author_description":
+    {
+      "title":"Copyright",
+      "type":"string",
+      "meta": {
+          "modelType": "text"
+      }
+    }
+  },
+  "required": [
+  ]
+}

@@ -1,0 +1,492 @@
+  /rest/dam/{instance}/media:
+    post:
+      description: |
+        Add `Media` objects.
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Request payload
+          required: true
+          schema:
+            type: object
+            properties:
+              addMedias:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    MainData:
+                      type: object
+                      description: 'Oggetto che descrive i metadati del media'
+                    bytestream:
+                      type: string
+                      description: 'ID returned by the Add API'
+                    collection:
+                      type: array
+                      items:
+                        type: string
+                        description: 'ID della collezione collegata'
+                    folder:
+                      type: string
+                      description: 'ID della cartella collegata'
+                    unzip:
+                      type: boolean
+                      description: 'True if the zip archive must be unzipped'
+                    containerId:
+                      type: string
+                      description: 'Id of the container where put the media'
+              nomenclature:
+                type: object
+                properties:
+                  start:
+                    type: integer
+                  end:
+                    type: integer
+                  pattern:
+                    type: string
+                  step:
+                    type: integer
+      responses:
+        '201':
+          description: Successful response
+      tags:
+        - medias
+
+  /rest/dam/{instance}/media/{mediaId}:
+    get:
+      description: |
+        Gets `Media` objects.
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: Media's id
+          type: string
+          required: true
+        - name: MainData
+          in: query
+          type: boolean
+          description: Parametro per ricevere i metadati
+        - name: datastream
+          in: query
+          type: string
+          description: Datastream model name
+        - name: bytestream
+          in: query
+          type: boolean
+          description: Parametro per ricevere i bytestream
+        - name: history
+          in: query
+          type: string
+          description: History model name
+        - name: collection
+          in: query
+          type: boolean
+          description: Parametro per ricevere le collezioni collegate
+        - name: folder
+          in: query
+          type: boolean
+          description: Parametro per ricevere le cartelle collegate
+        - name: RelatedMedia
+          in: query
+          type: boolean
+          description: Parametro per ricevere i media collegati
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              MainData:
+                type: object
+                description: 'Oggetto con i metadati legati al media. Questo oggetto potrebbe cambiare in base all istanza del DAM. Qui sotto è descritto un esempio'
+                properties:
+                  id:
+                    type: string
+                  title:
+                    type: string
+                  thumbnail:
+                    type: string
+                  file_name:
+                    type: string
+                  date:
+                    type: string
+                    format: date-time
+                  author:
+                    type: array
+                    items:
+                      type: string
+                  category:
+                    type: array
+                    items:
+                      type: string
+                  tags:
+                    type: array
+                    items:
+                      type: string
+                  description:
+                    type: string
+                  copyright:
+                    type: string
+              datastream:
+                type: object
+                description: 'Oggetto che descrive i dati variabili collegati al media'
+              bytestream:
+                type: array
+                items:
+                  type: object
+                  description: 'Oggetto che descrive il singolo bytestream'
+              history:
+                type: array
+                items:
+                  type: object
+                  description: 'Oggetto che descrive il singolo storico'
+              collection:
+                type: array
+                items:
+                  type: string
+                  description: 'Path degli id realtivi alla collezione collegata'
+              folder:
+                type: string
+                description: 'Path degli id realtivi alla cartella collegata'
+              RelatedMedia:
+                type: array
+                items:
+                  type: object
+                  description: 'Oggetto che descrive il media collegato'
+      tags:
+        - medias
+
+    delete:
+      description: |
+        Deletes `Media` objects.
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: Media's id
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+      tags:
+        - medias
+
+  /rest/dam/{instance}/media/{mediaId}/{modelName}:
+    post:
+      description: |
+        Add Resource to a Media.
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: ID of a Media
+          type: string
+          required: true
+        - name: modelName
+          in: path
+          description: Name of the resource to add
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Request payload
+          required: true
+          schema:
+            type: object
+      responses:
+        '201':
+          description: Successful response
+          schema:
+            type: object
+      tags:
+        - medias
+
+  /rest/dam/{instance}/media/{mediaId}/{modelName}/{modelId}:
+    put:
+      description: |
+        Modify Resource of a Media.
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: ID of a Media
+          type: string
+          required: true
+        - name: modelName
+          in: path
+          description: Name of the resource to add
+          type: string
+          required: true
+        - name: modelId
+          in: path
+          description: Id of the resource to edit
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Request payload
+          required: true
+          schema:
+            type: object
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+      tags:
+        - medias
+
+    delete:
+      description: |
+        Deletes a resource from a media.
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: ID of a Media
+          type: string
+          required: true
+        - name: modelName
+          in: path
+          description: Name of the resource to remove
+          type: string
+          required: true
+        - name: modelId
+          in: path
+          description: Id of the resource to delete
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+      tags:
+        - medias
+
+  /rest/dam/{instance}/media/{mediaId}/RelatedMedia:
+    post:
+      description: Link one or more media
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: ID of media
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Request payload
+          required: true
+          schema:
+            type: object
+            properties:
+              addMedias:
+                type: array
+                items:
+                  type: string
+                  description: Id Media to link
+      responses:
+        '201':
+          description: Successful response
+      tags:
+        - medias
+
+  /rest/dam/{instance}/media/{mediaId}/RelatedMedia/{idRelatedMedia}:
+    delete:
+      description: Unlink one media
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: ID of media
+          type: string
+          required: true
+        - name: idRelatedMedia
+          in: path
+          description: ID of media to unlink
+          type: string
+          required: true
+      responses:
+        '201':
+          description: Successful response
+      tags:
+        - medias
+
+  /rest/dam/{instance}/rollback:
+    post:
+      description: |
+        Rolback to specified ID
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Request payload
+          required: true
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+              detailId:
+                type: string
+      responses:
+        '201':
+          description: Successful response
+      tags:
+        - medias
+        - versions
+
+  /rest/dam/{instance}/exists/md5/{md5}:
+    get:
+      description: |
+        Verifica se esiste un bytestream in base all'md5
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: md5
+          in: path
+          type: string
+          description: md5 del bytestream
+          required: true
+        - name: bytestream
+          in: query
+          type: string
+          default: original
+          description: nome del bytestream
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              ids:
+                type: array
+                description: 'Array di uuid dei media'
+                items:
+                  type: string
+      tags:
+        - medias
+
+  /rest/dam/{instance}/upload:
+    post:
+      description: |
+        Uploads a new file.
+      consumes:
+        - multipart/form-data
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - in: formData
+          name: file
+          type: file
+          description: The file to upload.
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              response:
+                type: string
+                description: "<UniqueString>_<originalFilename>"
+        '400':
+          description: Instance not provided, file not provided or failed upload
+      tags:
+        - medias
+        - files
+
+  /rest/dam/{instance}/removeMedias:
+    post:
+      description: |
+        Remove the specified medias.
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Medias to remove (by id list and/or search criteria)
+          required: true
+          schema:
+            type: object
+            properties:
+              medias:
+                type: array
+                items:
+                  type: string
+                  description: Media ID to remove
+              mediaSearch:
+                type: object
+                properties:
+                  search:
+                    type: array
+                    description: Key-Value array used for the search criteria
+                  filters:
+                    type: array
+                    description: Key-Value array used for the search result filtering
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+        '400':
+          description: Instance not provided, failed deletion
+      tags:
+        - medias
+

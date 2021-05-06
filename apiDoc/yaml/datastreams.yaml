@@ -1,0 +1,221 @@
+  /rest/dam/{instance}/media/{mediaId}/datastream/{modelName}:
+    post:
+      description: Add datastream to a media
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: ID of media
+          type: string
+          required: true
+        - name: modelName
+          in: path
+          description: Datastream name
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Request payload
+          required: true
+          schema:
+            type: object
+            description: datastream object to save and associate with this media
+      responses:
+        '200':
+          description: Successful response
+      tags:
+        - datastreams
+
+  /rest/dam/{instance}/media/{mediaId}/datastream/{modelName}/{modelId}:
+    put:
+      description: Modify a given datastream
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: ID of media
+          type: string
+          required: true
+        - name: modelName
+          in: path
+          description: Datastream name
+          type: string
+          required: true
+        - name: modelId
+          in: path
+          description: Datastream ID
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Request payload
+          required: true
+          schema:
+            type: object
+            description: datastream object containing the information to update
+      responses:
+        '200':
+          description: Successful response
+      tags:
+        - datastreams
+
+  /rest/dam/{instance}/media/{mediaId}/bytestream/{byteStreamId}/datastream/{modelName}:
+    get:
+      description: Gets a datastream associated with the requested bytestream
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: ID of media
+          type: string
+          required: true
+        - name: byteStreamId
+          in: path
+          description: Bytestream id related to the requested media
+          type: string
+          required: true
+        - name: modelName
+          in: path
+          description: Datastream name
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response with [<modelName> => <datastreamValue>]
+      tags:
+        - datastreams
+        - bytestreams
+
+    post:
+      description: Saves a new datastream associated with the requested bytestream
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: ID of media
+          type: string
+          required: true
+        - name: byteStreamId
+          in: path
+          description: Bytestream id related to the requested media
+          type: string
+          required: true
+        - name: modelName
+          in: path
+          description: Datastream name
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Request payload
+          required: true
+          schema:
+            type: object
+            description: datastream object containing the information to save and associate with the chosen bytestream
+      responses:
+        '200':
+          description: Successful response
+      tags:
+        - datastreams
+        - bytestreams
+
+  /rest/dam/{instance}/media/{mediaId}/bytestream/{byteStreamId}/datastream/{modelName}/{modelId}:
+    put:
+      description: Modify a given datastream associated to the given bytestream
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: ID of media
+          type: string
+          required: true
+        - name: byteStreamId
+          in: path
+          description: Bytestream id related to the requested media
+          type: string
+          required: true
+        - name: modelName
+          in: path
+          description: Datastream name
+          type: string
+          required: true
+        - name: modelId
+          in: path
+          description: Datastream ID
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Request payload
+          required: true
+          schema:
+            type: object
+            description: datastream object containing the information to update
+      responses:
+        '200':
+          description: Successful response
+      tags:
+        - datastreams
+        - bytestreams
+
+  /rest/dam/{instance}/media/{mediaId}/bytestream/{byteStreamId}/datastream/{modelName}/history:
+    get:
+      description: Gets all the stored versions of a given datastream related to the requested bytestream
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: ID of media
+          type: string
+          required: true
+        - name: byteStreamId
+          in: path
+          description: Bytestream id related to the requested media
+          type: string
+          required: true
+        - name: modelName
+          in: path
+          description: Datastream name
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Media ID
+              history:
+                type: array
+                description: Datastream objects containing the stored information representing the stored versions
+                items:
+                  type: object
+      tags:
+        - datastreams
+        - bytestreams

@@ -1,0 +1,348 @@
+  /rest/dam/{instance}/collection:
+    post:
+      description: Create new collection
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Post body
+          required: true
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+              idParent:
+                type: string
+      responses:
+        '201':
+          description: Successful response
+      tags:
+        - collections
+
+  /rest/dam/{instance}/folder:
+    post:
+      description: Create new folder
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Post body
+          required: true
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+              idParent:
+                type: string
+      responses:
+        '201':
+          description: Successful response
+      tags:
+        - folders
+
+  /rest/dam/{instance}/collection/{id}:
+    put:
+      description: Edit a collection
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: id
+          in: path
+          description: Collection ID
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Post body
+          required: true
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+              idParent:
+                type: string
+      responses:
+        '200':
+          description: Successful response
+      tags:
+        - collections
+
+    delete:
+      description: Delete a collection and all childs
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: id
+          in: path
+          description: Collection ID
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+      tags:
+        - collections
+
+  /rest/dam/{instance}/folder/{id}:
+    put:
+      description: Edit a folder
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: id
+          in: path
+          description: Folder ID
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Post body
+          required: true
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+              idParent:
+                type: string
+      responses:
+        '200':
+          description: Successful response
+      tags:
+        - folders
+
+    delete:
+      description: Delete a folder and all childs
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: id
+          in: path
+          description: Folder ID
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+      tags:
+        - folders
+
+  /rest/dam/{instance}/collection/{id}/media:
+    post:
+      description: Add one or more media to a collection
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: id
+          in: path
+          description: ID of collection
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Request payload
+          required: true
+          schema:
+            type: object
+            properties:
+              addMedias:
+                type: array
+                items:
+                  type: string
+                  description: Media ID
+      responses:
+        '201':
+          description: Successful response
+      tags:
+        - collections
+
+  /rest/dam/{instance}/folder/{id}/media:
+    post:
+      description: Add one or more media to a collection
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: id
+          in: path
+          description: ID of folder
+          type: string
+          required: true
+        - name: payload
+          in: body
+          description: Request payload
+          required: true
+          schema:
+            type: object
+            properties:
+              addMedias:
+                type: array
+                items:
+                  type: string
+                  description: Media ID
+
+      responses:
+        '201':
+          description: Successful response
+      tags:
+        - folders
+
+
+  /rest/dam/{instance}/collection/{id}/media/{mediaId}:
+    delete:
+      description: Delete a media from a collection
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: id
+          in: path
+          description: ID of collection
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: ID of the media
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+      tags:
+        - collections
+
+  /rest/dam/{instance}/folder/{id}/media/{mediaId}:
+    delete:
+      description: Delete a media from a folder
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: id
+          in: path
+          description: ID of folder
+          type: string
+          required: true
+        - name: mediaId
+          in: path
+          description: ID of the media
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+      tags:
+        - folders
+
+  /rest/dam/{instance}/collection/{id}/children:
+    get:
+      description: Gets children of a collection
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: id
+          in: path
+          description: ID of collection
+          type: string
+          required: true
+
+      responses:
+        '200':
+          description: Successful response with an array of objects in which "id" and "key" are the same, "folder" is always true and "lazy" means "contains children"
+          schema:
+            type: object
+            properties:
+              collection:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    key:
+                      type: string
+                    title:
+                      type: string
+                    folder:
+                      type: boolean
+                    lazy:
+                      type: boolean
+      tags:
+        - collections
+
+
+  /rest/dam/{instance}/folder/{id}/children:
+    get:
+      description: Gets children of a folder
+      parameters:
+        - name: instance
+          in: path
+          description: Instance of DAM
+          type: string
+          required: true
+        - name: id
+          in: path
+          description: ID of collection
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response with an array of objects in which "id" and "key" are the same, "folder" is always true and "lazy" means "contains children"
+          schema:
+            type: object
+            properties:
+              collection:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                    key:
+                      type: string
+                    title:
+                      type: string
+                    folder:
+                      type: boolean
+                    lazy:
+                      type: boolean
+      tags:
+        - folders
+
+
+

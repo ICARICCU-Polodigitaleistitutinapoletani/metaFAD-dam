@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnx:Config xmlns:pnx="http://www.pinax.org/dtd/1.0/">
+    <pnx:Param name="dam.types"><![CDATA[
+    {
+      "SIMPLE": ["SimpleData"],
+      "IMAGE": ["Right", "Exif", "NisoImg"],
+      "VIDEO": ["Right", "NisoVideo"],
+      "PDF": ["Right"],
+      "AUDIO": ["Right"],
+      "CONTAINER": [],
+      "OTHER": []
+    }
+    ]]></pnx:Param>
+
+    <pnx:Param name="dam.solr.document"><![CDATA[
+    {
+      "id": "self:uuid",
+      "instance_s": "dam.models.Media:instance",
+      "is_contained_i": "dam.models.Media:is_contained",
+      "collection_ss": "dam.models.Media:collection",
+      "folder_s": "dam.models.Media:folder",
+      "media_type_s": "dam.models.Media:media_type",
+      "media_parent_ss": "dam.models.Media:media_parent",
+      "media_child_ss": "dam.models.Media:media_child",
+      "related_collectionFolder_ii": "dam.models.Media:related_collectionFolder",
+      "bytestream_last_update_s": "dam.models.Media:bytestream_last_update",
+      "file_type_s": "dam.models.ByteStream:type",
+      "file_title_s": "dam.models.ByteStream:title",
+      "width_i": "dam.models.ByteStream:width",
+      "height_i": "dam.models.ByteStream:height",
+      "title_collectionFolder_s": "dam.models.CollectionFolder:title",
+      "type_collectionFolder_s": "dam.models.CollectionFolder:type",
+      "id_parent_collectionFolder_ii": "dam.models.CollectionFolder:id_parent_collectionFolder",
+      "media_id_ss": "dam.models.CollectionFolder:media_id",
+      "media_id_s": "dam.models.MainData:media_id"
+    }
+    ]]></pnx:Param>
+
+    <pnx:Param name="dam.allowedRoot" value="{{env:DAM_ALLOW_ROOT}}" />
+    <pnx:Param name="dam.streamURL" value="{{env:DAM_STREAM_URL}}" />
+    <pnx:Param name="dam.search.defaultSortField" value="title" />
+    <pnx:Param name="dam.search.exportFields"><![CDATA[
+    {
+      "file_name": "file_name_s",
+      "width": "width_i",
+      "height": "height_i"
+    }
+    ]]>
+    </pnx:Param>
+
+    <pnx:Param name="IMG_ORIGINAL_MAX_WIDTH" value="50000"/>
+    <pnx:Param name="IMG_ORIGINAL_MAX_HEIGHT" value="50000"/>
+
+    <pnx:Param name="dam.schema.path" value="metafad/forms_schema/" />
+    <pnx:Param name="dam.advancedSearchFixed" value="false" />
+    <pnx:Param name="dam.trash.enabled" value="true" />
+    <pnx:Param name="dam.store.byteStreamTypes" value="true" />
+    <pnx:Param name="dam.image.driver" value="imagick" />
+    <pnx:Param name="dam.uploadMaxFiles" value="10" />
+
+    <pnx:Param name="dam.resize.watermark.path" value="../../admin/application/data/watermark.png" />
+    <pnx:Param name="dam.resize.watermark.rules" value="dam.watermark.GeneralWatermarkRules" />
+</pnx:Config>

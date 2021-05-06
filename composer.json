@@ -1,0 +1,25 @@
+{
+  "name": "icariccu/metafad-dam",
+  "description": "metaFAD - DAM API",
+  "license": "BSD 3-Clause",
+  "type": "module",
+  "repositories": [
+      {
+          "type": "vcs",
+          "url": "https://github.com/ICARICCU/Pinax"
+      }
+  ],
+  "require": {
+    "league/flysystem": "~1.0",
+    "ramsey/uuid": "~3.4",
+    "intervention/image": "^2.3",
+    "icariccu/pinax": "dev-main"
+  },
+  "require-dev": {
+  },
+  "scripts": {
+    "clear-cache": [
+        "rm -rf admin/cache/*.php"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+	"type": "object",
+	"title": "ADD_FORM",
+	"properties": {
+		"title": {
+			"title": "Titolo del File",
+			"type": "string"
+		},
+        "author": {
+          "key":"author",
+          "title":"Autore",
+          "type":"array",
+          "format":"uiselect",
+          "autocomplete":"author_ss_lower",
+          "tagging":true,
+          "mapFuncTagging":"datastream.SIMPLE.SimpleData.form.0.items.1.items.0.options",
+          "mapFuncCallback":"datastream.SIMPLE.SimpleData.form.0.items.1.items.0.options"
+        },
+        "date": {
+          "title": "Data",
+          "type": "string",
+          "format": "date"
+        },
+        "category": {
+          "key":"category",
+          "title":"Categoria",
+          "type":"array",
+          "format":"uiselect",
+          "autocomplete":"category_ss_lower",
+          "tagging":true,
+          "mapFuncTagging":"datastream.SIMPLE.SimpleData.form.0.items.3.items.0.options",
+          "mapFuncCallback":"datastream.SIMPLE.SimpleData.form.0.items.3.items.0.options"
+        },
+        "tag": {
+          "key":"tag",
+          "title":"Tags",
+          "type":"array",
+          "format":"uiselect",
+          "autocomplete":"tag_ss_lower",
+          "tagging":true,
+          "mapFuncTagging":"datastream.SIMPLE.SimpleData.form.0.items.4.items.0.options",
+          "mapFuncCallback":"datastream.SIMPLE.SimpleData.form.0.items.4.items.0.options"
+        },
+        "unzip": {
+		  "title": "Decomprimi",
+          "type": "boolean"
+		}
+	},
+	"required": ["title", "author", "category", "tag"]
+}

@@ -1,0 +1,351 @@
+[
+    {
+        "type": "section",
+        "htmlClass": "row",
+        "items": [
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "FileDateTime"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "FileSize"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "FileType"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "MimeType"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "SectionsFound"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "ImageDescription"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "Make"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "Model"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "Orientation"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "XResolution"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "YResolution"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "ResolutionUnit"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "DateTime"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "YCbCrPositioning"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "Exif_IFD_Pointer"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "GPS_IFD_Pointer"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "ExposureTime"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "FNumber"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "ExposureProgram"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "ISOSpeedRatings"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "ExifVersion"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "DateTimeOriginal"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "DateTimeDigitized"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "ComponentsConfiguration"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "CompressedBitsPerPixel"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "ExposureBiasValue"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "MaxApertureValue"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "MeteringMode"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "Flash"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "FocalLength"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "FlashPixVersion"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "ColorSpace"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "ExifImageWidth"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "ExifImageLength"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "InteroperabilityOffset"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "FileSource"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "SceneType"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "CustomRendered"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "ExposureMode"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "WhiteBalance"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "SceneCaptureType"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "GPSVersion"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "GPSLatitudeRef"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "GPSLongitudeRef"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "GPSStatus"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "GPSMapDatum"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "GPSDateStamp"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "InterOperabilityIndex"
+                ]
+            },
+            {
+                "type": "section",
+                "htmlClass": "col-xs-12",
+                "items": [
+                    "InterOperabilityVersion"
+                ]
+            }
+        ]
+    }
+]
