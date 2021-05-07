@@ -6,6 +6,10 @@
                value="rest/dam/{value=instance}/get/{value=mediaId}/{value=bytestreamName}"
                controller="dam.rest.controllers.Main.GetBytestream"/>
 
+    <pnx:Route method="HEAD"
+               value="rest/dam/{value=instance}/get/{value=mediaId}/{value=bytestreamName}"
+               controller="dam.rest.controllers.Main.GetBytestream"/>
+
     <pnx:Route method="GET"
                value="rest/dam/{value=instance}/resize-stream/{value=mediaId}/{value=bytestreamName}/{value=newBytestreamName}"
                controller="dam.rest.controllers.Main.ResizeAndCreateBytestream"/>
