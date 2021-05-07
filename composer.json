@@ -13,7 +13,7 @@
     "league/flysystem": "~1.0",
     "ramsey/uuid": "~3.4",
     "intervention/image": "^2.3",
-    "icariccu/pinax": "dev-main"
+    "icariccu/pinax-2": "dev-main"
   },
   "require-dev": {
   },

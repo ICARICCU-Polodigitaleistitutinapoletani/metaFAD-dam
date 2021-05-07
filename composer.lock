@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "de3f43510dc3452563c9979ca6efbd42",
+    "content-hash": "5d513934cbeb503434c42a0756a7d56f",
     "packages": [
         {
             "name": "defuse/php-encryption",
@@ -608,17 +608,17 @@
             "time": "2020-11-26T19:24:33+00:00"
         },
         {
-            "name": "icariccu/pinax",
+            "name": "icariccu/pinax-2",
             "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ICARICCU/Pinax.git",
-                "reference": "74e5999a03a27a53e109ab9ee26e54b96cab82f9"
+                "reference": "e5db86eab7f22b7aa958f1c55fccd4ae63e2be85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ICARICCU/Pinax/zipball/74e5999a03a27a53e109ab9ee26e54b96cab82f9",
-                "reference": "74e5999a03a27a53e109ab9ee26e54b96cab82f9",
+                "url": "https://api.github.com/repos/ICARICCU/Pinax/zipball/e5db86eab7f22b7aa958f1c55fccd4ae63e2be85",
+                "reference": "e5db86eab7f22b7aa958f1c55fccd4ae63e2be85",
                 "shasum": ""
             },
             "require": {
@@ -678,7 +678,7 @@
                 "source": "https://github.com/ICARICCU/Pinax/tree/main",
                 "issues": "https://github.com/ICARICCU/Pinax/issues"
             },
-            "time": "2021-05-06T10:20:15+00:00"
+            "time": "2021-05-07T08:23:12+00:00"
         },
         {
             "name": "intervention/image",
@@ -1595,7 +1595,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "icariccu/pinax": 20
+        "icariccu/pinax-2": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
